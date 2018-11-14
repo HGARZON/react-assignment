@@ -23,3 +23,20 @@ th {
   width: 100px;
   height: 100px;
 }
+
+/* Loading */
+
+.loading {
+  width: 100px;
+}
+
+.modalButton {
+  border: 1px solid #ccc;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 13px;
+}
+
+.modalButton:hover {
+  background-color: #efefef;
+}

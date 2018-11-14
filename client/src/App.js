@@ -29,11 +29,14 @@ class App extends Component {
   };
 
   render() {
+    const data = this.state.response;
     return (
+      
       <div className="App">
         <HomeView />
-        <TableView data={ this.state.response } />
+        <TableView data={ data } />
       </div>
+      
     );
   }
 }
