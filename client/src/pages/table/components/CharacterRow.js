@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import Modal from 'react-modal';
 
 const customStyles = {
-    content : {
-        top                   : '50%',
-        left                  : '50%',
-        right                 : 'auto',
-        bottom                : 'auto',
-        marginRight           : '-50%',
-        transform             : 'translate(-50%, -50%)'
-    }
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+    },
 };
 class CharacterRow extends Component {
     constructor(props) {
@@ -18,7 +19,6 @@ class CharacterRow extends Component {
 
         this.state = {
             modalIsOpen: false,
-            data: this.props
         };
 
         this.openModal = this.openModal.bind(this);
@@ -26,31 +26,24 @@ class CharacterRow extends Component {
         this.closeModal = this.closeModal.bind(this);
     }
 
-    openModal() {
-        this.setState({modalIsOpen: true});
-    }
+    openModal() { this.setState({ modalIsOpen: true }); }
 
-    afterOpenModal() {
-        // references are now sync'd and can be accessed.
-        this.subtitle.style.color = '#f00';
-    }
+    afterOpenModal() { this.subtitle.style.color = '#f00'; }
 
-    closeModal() {
-        this.setState({modalIsOpen: false});
-    }
+    closeModal() { this.setState({ modalIsOpen: false }); }
 
     render() {
         const {
             image,
             name,
-            species, 
+            species,
             status,
-            location
+            location,
         } = this.props.data;
 
-        return(
+        return (
             <tr className="character">
-                <td className="character__image"><img src={image} /></td>
+                <td className="character__image"><img src={image} alt={name} title={name} /></td>
                 <td className="character__name">{name}</td>
                 <td className="character__specie">{species}</td>
                 <td className="character__status">{status}</td>
@@ -62,9 +55,8 @@ class CharacterRow extends Component {
                     onAfterOpen={this.afterOpenModal}
                     onRequestClose={this.closeModal}
                     style={customStyles}
-                    contentLabel={name}Modal
-                    >
-
+                    contentLabel={name}
+                >
                     <h2 ref={subtitle => this.subtitle = subtitle}>{name}</h2>
                     <div>I am a modal</div>
                     <button onClick={this.closeModal}>close</button>
@@ -74,5 +66,21 @@ class CharacterRow extends Component {
         );
     }
 }
+
+CharacterRow.propTypes = {
+    data: PropTypes.instanceOf(Object),
+    name: PropTypes.string,
+    species: PropTypes.string,
+    status: PropTypes.string,
+    location: PropTypes.string,
+};
+
+CharacterRow.defaultProps = {
+    data: {},
+    name: 'john',
+    species: 'human',
+    status: 'alive',
+    location: 'earth',
+};
 
 export default CharacterRow;
