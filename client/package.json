@@ -98,7 +98,12 @@
     ]
   },
   "eslintConfig": {
-    "extends": "@endouble.com/eslint-config-endouble/react"
+    "extends": "@endouble.com/eslint-config-endouble/react",
+    "globals": {
+      "document": false,
+      "fetch": true,
+      "callApi": true
+    }
   },
   "devDependencies": {
     "@endouble.com/eslint-config-endouble": "^1.2.1"

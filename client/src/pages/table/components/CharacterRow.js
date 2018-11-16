@@ -57,7 +57,7 @@ class CharacterRow extends Component {
                     style={customStyles}
                     contentLabel={name}
                 >
-                    <h2 ref={subtitle => this.subtitle = subtitle}>{name}</h2>
+                    <h2 ref={(subtitle) => { this.subtitle = subtitle; }}>{name}</h2>
                     <div>I am a modal</div>
                     <button onClick={this.closeModal}>close</button>
                 </Modal>
