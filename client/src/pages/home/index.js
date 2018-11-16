@@ -3,7 +3,7 @@ import React from 'react';
 import headerImage from './assets/header.jpg';
 import './styles/home.css';
 
-const HomeView = (
+const HomeView = () => (
     <div>
         <h1 className="character-title">
             Rick and Morty Character Information Database
