@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import CharacterRow from './CharacterRow';
+
 // High Order function that return a function. Does not have access to out state.
 function searchingFor(term) {
     // make sure that what we are filtering meets the condition setup here
@@ -24,17 +26,19 @@ class SearchFilter extends Component {
     render() {
         return (
             <div>
-                <form>
+                <form className="search-filter">
                     <input
+                        className="search-filter__field"
                         type="text"
                         onChange={this.searchHandler}
                         value={this.state.term}
+                        placeholder="Enter your favourite character..."
                     />
                 </form>
                 {
                     this.props.data.filter(searchingFor(this.state.term)).map(person => (
-                        <div key={person.id}>
-                            <h1>{person.name}</h1>
+                        <div key={person.id} className="character__grid">
+                            <CharacterRow data={person} />
                         </div>
                     ))
                 }

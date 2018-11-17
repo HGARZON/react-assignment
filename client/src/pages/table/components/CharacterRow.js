@@ -28,7 +28,7 @@ class CharacterRow extends Component {
 
     openModal() { this.setState({ modalIsOpen: true }); }
 
-    afterOpenModal() { this.subtitle.style.color = '#f00'; }
+    afterOpenModal() { this.subtitle.style.color = '#a7cd68'; }
 
     closeModal() { this.setState({ modalIsOpen: false }); }
 
@@ -39,30 +39,38 @@ class CharacterRow extends Component {
             species,
             status,
             location,
+            origin,
+            episode,
         } = this.props.data;
 
         return (
-            <tr className="character">
-                <td className="character__image"><img src={image} alt={name} title={name} /></td>
-                <td className="character__name">{name}</td>
-                <td className="character__specie">{species}</td>
-                <td className="character__status">{status}</td>
-                <td className="character__location">{location.name}</td>
-                <td><button className="modalButton" onClick={this.openModal}>View details</button></td>
-
-                <Modal
-                    isOpen={this.state.modalIsOpen}
-                    onAfterOpen={this.afterOpenModal}
-                    onRequestClose={this.closeModal}
-                    style={customStyles}
-                    contentLabel={name}
-                >
-                    <h2 ref={(subtitle) => { this.subtitle = subtitle; }}>{name}</h2>
-                    <div>I am a modal</div>
-                    <button onClick={this.closeModal}>close</button>
-                </Modal>
-
-            </tr>
+            <div className="character__details">
+                <img className="character__details--image" src={image} alt={name} title={name} />
+                <h3>{name}</h3>
+                <button className="modal__button" onClick={this.openModal}>View details</button>
+                <React.Fragment>
+                    <Modal
+                        isOpen={this.state.modalIsOpen}
+                        onAfterOpen={this.afterOpenModal}
+                        onRequestClose={this.closeModal}
+                        style={customStyles}
+                        contentLabel={name}
+                    >
+                        <div className="modal">
+                            <h2 className="modal__title" ref={(subtitle) => { this.subtitle = subtitle; }}>{name}</h2>
+                            <img className="modal__image" src={image} alt={name} title={name} />
+                            <ul className="modal__list">
+                                <li>Specie: {species}</li>
+                                <li>Status: {status}</li>
+                                <li>Location: {location.name}</li>
+                                <li>Origin: {origin.name}</li>
+                                <li>Appearances: {episode.length}</li>
+                            </ul>
+                        </div>
+                        <button className="modal__button" onClick={this.closeModal}>close</button>
+                    </Modal>
+                </React.Fragment>
+            </div>
         );
     }
 }
@@ -73,6 +81,8 @@ CharacterRow.propTypes = {
     species: PropTypes.string,
     status: PropTypes.string,
     location: PropTypes.string,
+    origin: PropTypes.string,
+    episode: PropTypes.instanceOf(Array),
 };
 
 CharacterRow.defaultProps = {
@@ -81,6 +91,8 @@ CharacterRow.defaultProps = {
     species: 'human',
     status: 'alive',
     location: 'earth',
+    origin: 'alien spa',
+    episode: [],
 };
 
 export default CharacterRow;
