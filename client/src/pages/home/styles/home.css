@@ -1,8 +1,16 @@
-.header {
+.header__image {
   border-radius: 320px;
+  width: 100%;
+  height: auto;
 }
 
-.link-information {
+@media only screen and (min-width: 1024px) {
+  .header__image {
+    width: 50%;
+  }
+}
+
+.header__link-information {
   color:#a7cd68;
   font-size: 13px;
   font-weight: normal;

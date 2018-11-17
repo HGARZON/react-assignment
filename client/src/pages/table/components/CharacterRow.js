@@ -13,7 +13,7 @@ const customStyles = {
         transform: 'translate(-50%, -50%)',
     },
 };
-class CharacterRow extends Component {
+class CharacterCard extends Component {
     constructor(props) {
         super(props);
 
@@ -75,7 +75,7 @@ class CharacterRow extends Component {
     }
 }
 
-CharacterRow.propTypes = {
+CharacterCard.propTypes = {
     data: PropTypes.instanceOf(Object),
     name: PropTypes.string,
     species: PropTypes.string,
@@ -85,7 +85,7 @@ CharacterRow.propTypes = {
     episode: PropTypes.instanceOf(Array),
 };
 
-CharacterRow.defaultProps = {
+CharacterCard.defaultProps = {
     data: {},
     name: 'john',
     species: 'human',
@@ -95,4 +95,4 @@ CharacterRow.defaultProps = {
     episode: [],
 };
 
-export default CharacterRow;
+export default CharacterCard;

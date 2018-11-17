@@ -1,4 +1,13 @@
+/* Container */
+.characters__container {
+  width: 100%;
+}
+
 /* Search filter*/
+
+.search-filter {
+  margin-top: 20px;
+}
 
 .search-filter__field {
   border: 1px solid #ccc;
@@ -12,7 +21,7 @@
 
 .character__grid {
   display: inline-block;
-  width: 30%;
+  width: 100%;
   margin-top: 30px;
 }
 
@@ -70,4 +79,16 @@
 
 .modal__button:hover {
   background-color: #efefef;
+}
+
+@media only screen and (min-width: 768px) {
+  .character__grid {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .character__grid {
+    width: 30%;
+  }
 }

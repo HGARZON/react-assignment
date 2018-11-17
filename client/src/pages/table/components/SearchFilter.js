@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import CharacterRow from './CharacterRow';
+import CharacterCard from './CharacterRow';
 
 // High Order function that return a function. Does not have access to out state.
 function searchingFor(term) {
@@ -25,7 +25,7 @@ class SearchFilter extends Component {
 
     render() {
         return (
-            <div>
+            <div className="characters__container">
                 <form className="search-filter">
                     <input
                         className="search-filter__field"
@@ -38,7 +38,7 @@ class SearchFilter extends Component {
                 {
                     this.props.data.filter(searchingFor(this.state.term)).map(person => (
                         <div key={person.id} className="character__grid">
-                            <CharacterRow data={person} />
+                            <CharacterCard data={person} />
                         </div>
                     ))
                 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
 import './styles/table.css';
+
 import SearchFilter from './components/SearchFilter';
 
 import loadingImage from './assets/loading.gif';
@@ -19,7 +19,6 @@ class TableView extends Component {
     render() {
         return (
             <div>
-                <h2 className="character-subtitle">Table information</h2>
                 {this.checkData()}
             </div>
         );
