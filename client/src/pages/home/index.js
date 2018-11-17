@@ -11,7 +11,7 @@ const HomeView = () => (
         <div>
             <img className="header__image" src={headerImage} alt="Rick and Morty" />
         </div>
-        <a href="https://rickandmortyapi.com" className="header__link-information">https://rickandmortyapi.com</a>
+        <a href="https://rickandmortyapi.com" className="header__link-information" target="_blank" rel="noopener noreferrer">https://rickandmortyapi.com</a>
     </div>
 );
 

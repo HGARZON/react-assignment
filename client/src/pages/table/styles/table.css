@@ -47,6 +47,10 @@
   height: 100px;
 }
 
+.character__title {
+  font-size: 1em;
+}
+
 /* Modal */
 
 .modal__title {

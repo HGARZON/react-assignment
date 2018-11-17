@@ -49,7 +49,7 @@ class CharacterCard extends Component {
         return (
             <div className="character__details">
                 <img className="character__details--image" src={image} alt={name} title={name} />
-                <h3>{name}</h3>
+                <h3 className="character__title">{name}</h3>
                 <button className="modal__button" onClick={this.openModal}>View details</button>
                 <React.Fragment>
                     <Modal
