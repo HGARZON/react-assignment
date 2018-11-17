@@ -13,6 +13,9 @@ const customStyles = {
         transform: 'translate(-50%, -50%)',
     },
 };
+
+Modal.setAppElement('#root');
+
 class CharacterCard extends Component {
     constructor(props) {
         super(props);
