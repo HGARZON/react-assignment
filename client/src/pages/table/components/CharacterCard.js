@@ -14,7 +14,7 @@ const customStyles = {
     },
 };
 
-Modal.setAppElement('#root');
+if (process.env.NODE_ENV !== 'test') Modal.setAppElement('#root');
 
 class CharacterCard extends Component {
     constructor(props) {
