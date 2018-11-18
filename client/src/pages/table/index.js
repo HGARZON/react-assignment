@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './styles/table.css';
 
-import SearchFilter from './components/SearchFilter';
+import SearchFilter from './components/SearchFilter/';
 
 import loadingImage from './assets/loading.gif';
 

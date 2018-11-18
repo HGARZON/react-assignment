@@ -2,23 +2,24 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Adapter from 'enzyme-adapter-react-16';
 import Enzyme, { shallow } from 'enzyme';
-import App from './App';
+import HomeView from'./index';
 
 Enzyme.configure({ adapter: new Adapter() })
 
 it('renders without crashing', () => {
-    shallow(<App />);
+    shallow(<HomeView />);
 });
 
-describe('<App />', () => {
-        it('should render an `.App`', () => {
-        const wrapper = shallow(<App />);
-        expect(wrapper.find('.App'));
-    })
+describe('<HomeView />', () => {
+    const wrapper = shallow(<HomeView />);
+
+    it('should render a class `.header`', () => {
+      expect(wrapper.find('.header'));
+    });
 
     /* Snapshot */
     it('renders correctly', () => {
-        const component = renderer.create(<App />);
+        const component = renderer.create(<HomeView />);
         const json = component.toJSON();
 
         expect(json).toMatchSnapshot();

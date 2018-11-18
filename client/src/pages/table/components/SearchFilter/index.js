@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import CharacterCard from './CharacterCard';
+import CharacterCard from '../CharacterCard/';
 
 // High Order function that return a function. Does not have access to out state.
 function searchingFor(term) {
