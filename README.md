@@ -1,5 +1,15 @@
 # Endouble React Assignment
 
+## How to use
+
+At a root level execute:
+
+```
+yarn dev
+```
+
+This will automatically open the 3000 port.
+
 ## Proyect Backend Scaffolding
 
 The backend configuration is at a root level, where there are you will find the server and the services folder.
