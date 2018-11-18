@@ -2,17 +2,21 @@
   "name": "react-assignment-backend",
   "version": "1.0.0",
   "scripts": {
-    "client": "cd client && set HTTPS=true&&yarn start",
-    "server": "nodemon server.js",
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js && https=true",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
   },
   "dependencies": {
     "body-parser": "^1.18.3",
+    "enzyme-adapter-react-16": "^1.7.0",
     "express": "^4.16.4",
+    "fs": "^0.0.1-security",
+    "https": "^1.0.0",
     "isomorphic-fetch": "^2.2.1",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "concurrently": "^4.0.1"
+    "concurrently": "^4.0.1",
+    "react-test-renderer": "^16.6.3"
   }
 }
